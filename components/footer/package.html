@@ -1,0 +1,126 @@
+<script type="text/javascript">
+	var Controller = new (function(){
+		var self = this;
+		
+		self.construct = function(){
+			
+		}
+
+		self['[feedback]'] = function(){
+			return {
+				click:function(event){
+					if(self._selector('.formArea')[0].classList.contains('active'))
+						self._selector('.formArea')[0].classList.remove('active');
+					else
+						self._selector('.formArea')[0].classList.add('active');
+				}
+			}
+		}	
+
+		self['[name="formFeedback"]'] = function(){
+			return {
+				submit:function(event){
+
+					var name = self._selector('[name="name"]')[0].value;
+					var email = self._selector('[name="email"]')[0].value;
+					var msg = self._selector('[name="message"]')[0].value;
+
+					var message = '';
+						message += '<strong>Nome: </strong>'+name+'<br>';
+						message += '<strong>Email: </strong>'+email+'<br>';
+						message += '<strong>Mensagem: </strong>'+msg+'<br>';
+
+					var url = 'https://admin.achoord.com/api/v1/wallrio/apisafe/emails/feedback/send?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndhbGxyaW9AZ21haWwuY29tIn0.rRih7Ci-vqwDY8HnRHr4eb5RKRaFTNt8QPLcyKjnFTo';
+
+					self._ajax({
+						url:url,
+						data:{
+							message:message
+						},
+						success:function(response){							
+							self._selector('#resultFormFeedback')[0].innerHTML = 'Feedback enviado com sucesso';
+						},
+						error:function(response){							
+							self._selector('#resultFormFeedback')[0].innerHTML = 'Erro ao enviar seu Feedback';
+						}
+					});
+					
+					self._selector('.feedback-sended')[0].classList.remove('hide');
+					self._selector('.feedback-form')[0].classList.add('hide');
+					
+					return false;
+				}
+			}
+		}
+
+		return self;
+	});
+</script>
+<style type="text/css">
+	raiz-component.{package}{
+		background-color: #222;
+	}raiz-component.{package} .formArea{
+		display: block;
+		overflow: hidden;
+		max-height: 0px;
+		transition: 500ms;
+	}raiz-component.{package} .formArea.active{
+		transition: 1000ms;
+		max-height: 1000px;		
+	}raiz-component.{package} {
+	}raiz-component.{package} fieldset.inputflat.input-ui-defined input,
+	raiz-component.{package} fieldset.inputflat.input-ui-defined textarea{
+		color: #fff;
+	}raiz-component.{package} fieldset.inputflat.input-ui-defined.focus legend, 
+	raiz-component.{package} fieldset.inputflat.input-ui-defined.notempty legend{
+		color: #A21939;
+	}raiz-component.{package} fieldset.inputflat.input-ui-defined.focus::before{
+		background-color: #A21939;
+	}raiz-component.{package} .formArea button{
+		background-color: #A21939;
+		border:1px solid #A21939;
+	}raiz-component.{package} .formArea button:hover{
+		border:1px solid #bb1c41;
+		background-color: #bb1c41;
+	}raiz-component.{package} .formArea button:active{
+		background-color: #6d0d23;
+	    border: 1px solid #580115;
+	    color: #3a030f;	
+	}raiz-component.{package} .feedback-sended{
+		color: #fff;
+	}raiz-component.{package} .feedback-sended p{
+		color: inherit;
+	}raiz-component.{package} .feedback-form{
+	}raiz-component.{package} .feedback-form #resultFormFeedback{
+		color: #eee;
+	}
+</style>
+<script type="text/html">
+	<div class="container padding mobile-center tablet-center">
+		<div class="feedback-sended hide">
+			<p>Obrigado pelo envio do seu feedback!</p>
+		</div>
+		<div class="feedback-form">
+			<button class="-itransparent" feedback>Envie seu Feedback</button>
+			<div class="formArea">
+				<form name="formFeedback" class="padding">
+					<input type="text" name="name" class="inputflat input-ui" placeholder="Nome">
+					<input type="text" name="email" class="inputflat input-ui" placeholder="Email">
+					<br>
+					<textarea name="message" class="inputflat input-ui" placeholder="Mensagem"></textarea>
+					<br>
+					<div grid class="line ">
+						<div grid class="column col1 ">
+							<button class="-black">Enviar</button>
+						</div>
+						<div grid class="column">
+							<div class="padding" id="resultFormFeedback">
+									
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</script>
