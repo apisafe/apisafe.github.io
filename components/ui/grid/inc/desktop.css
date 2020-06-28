@@ -1,0 +1,223 @@
+/* Responsible: desktop = landscape; */
+@media (min-width: 1024px){
+
+   /* .limit,.desktop-limit{
+        width: 80% !important;
+        margin: auto !important;
+    }
+*/
+
+    
+.container{
+    max-width: 1280px;
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+   
+    
+
+    .desktop-padding{
+        padding: 10px;
+    }.desktop-padding-left{
+        padding-left: 10px;
+    }.desktop-padding-right{
+        padding-right: 10px;
+    }.desktop-padding-top{
+        padding-top: 10px;
+    }.desktop-padding-right{
+        padding-bottom: 10px;
+    }
+
+    .desktop-container{
+        max-width: 1280px;
+        width: 80% !important;
+        display: block;
+        margin: auto;
+    }
+
+    .desktop-line{
+        height: auto;
+    }.desktop-line0{
+        height: 0.1%;
+    }.desktop-line1{
+        height: 8.333333%;
+    }.desktop-line2{
+        height: 16.666667%;
+    }.desktop-line3{
+        height: 25%;
+    }.desktop-line4{
+        height: 33.333333%;
+    }.desktop-line5{
+        height: 41.666667%;
+    }.desktop-line6{
+        height: 50%;
+    }.desktop-line7{
+        height: 58.333333%;
+    }.desktop-line8{
+        height: 66.666667%;
+    }.desktop-line9{
+        height: 75%;
+    }.desktop-line10{
+        height: 83.333333%;
+    }.desktop-line11{
+        height: 91.666667%;
+    }.desktop-line12{
+        height: 100%;
+    }
+
+
+    .desktop-col{
+        width: auto;
+    }.desktop-col0{
+        width: 0.1%;
+    }.desktop-col1{
+        width: 8.333333%;
+    }.desktop-col2{
+        width: 16.666667%;
+    }.desktop-col3{
+        width: 25%;
+    }.desktop-col4{
+        width: 33.333333%;
+    }.desktop-col5{
+        width: 41.666667%;
+    }.desktop-col6{
+        width: 50%;
+    }.desktop-col7{
+        width: 58.333333%;
+    }.desktop-col8{
+        width: 66.666667%;
+    }.desktop-col9{
+        width: 75%;
+    }.desktop-col10{
+        width: 83.333333%;
+    }.desktop-col11{
+        width: 91.666667%;
+    }.desktop-col12{
+        width: 100%;
+    }
+    
+
+   
+
+    [grid].lines{
+        display: table;        
+        width: 100%;
+        height: 100%;
+    }[grid].lines > .line{
+        display: table-row;
+    }
+
+    [grid].line{
+        display: table;
+        width: 100%;
+    }
+
+    [grid].line > [grid].column{
+        display: table-cell;
+            /*display: inline-flex;*/
+        /*display: inline-block;*/
+        /*height: 50%;*/
+    }
+
+    [grid].line > [grid].column:not(.line0):not(.line1):not(.line2):not(.line3):not(.line4):not(.line5):not(.line6):not(.line7):not(.line8):not(.line9):not(.line10):not(.line11):not(.line12){
+		height: 50%;
+	}
+
+    .desktop-hide{
+		display: none !important;
+	}
+
+ 
+    .left{
+
+        text-align: left;
+        align-items: flex-start;
+
+        flex-direction: row ;
+        justify-content: start ;
+
+  
+    }.center{
+
+        text-align: center;
+        /*align-items: center;*/
+        justify-content: center;
+    }.center *{
+		/*text-align: center;*/
+		margin-left: auto;
+    	margin-right: auto;
+
+    }.right{
+
+        text-align: right;
+	    align-items: flex-end;
+
+		flex-direction: row ;
+		justify-content: end ;
+	}
+
+	.top{
+
+		vertical-align: top;
+	    flex-direction: column;
+	    justify-content: flex-start;
+	}.middle{
+
+		vertical-align: middle;
+	    flex-direction: column;
+	    justify-content: center;
+	}.bottom{
+
+		vertical-align: bottom;
+	    flex-direction: column;
+	    justify-content: flex-end;
+	}
+    /*.desktop-left{
+        text-align: left;
+    }.desktop-center{
+        text-align: center;
+    }.desktop-center *{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }.desktop-right{
+        text-align: right;
+    }
+
+    .desktop-top{
+        vertical-align: top;
+    }.desktop-middle{
+        vertical-align: middle;
+    }.desktop-middle *{
+        vertical-align: middle;
+        margin-top: auto;
+        margin-bottom: auto;
+    }.desktop-bottom{
+        vertical-align: bottom;
+    }*/
+
+    /*.desktop-justify{
+        text-align: justify;
+    }*/
+
+    /* scroll */
+
+    .desktop-scroll {
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }.desktop-scroll-fixed {
+        display: block;
+        /*width: 100%;*/
+        height:100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        position: fixed;
+    }
+
+}

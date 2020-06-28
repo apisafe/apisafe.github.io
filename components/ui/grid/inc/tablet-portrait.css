@@ -1,0 +1,102 @@
+/* Responsible: tablet = portrait; */
+@media screen and (min-width: 641px) and (max-width: 768px) {
+
+    .tablet-p-line{
+        height: auto;
+    }.tablet-p-line0{
+        height: 0.1%;
+    }.tablet-p-line1{
+        height: 8.333333%;
+    }.tablet-p-line2{
+        height: 16.666667%;
+    }.tablet-p-line3{
+        height: 25%;
+    }.tablet-p-line4{
+        height: 33.333333%;
+    }.tablet-p-line5{
+        height: 41.666667%;
+    }.tablet-p-line6{
+        height: 50%;
+    }.tablet-p-line7{
+        height: 58.333333%;
+    }.tablet-p-line8{
+        height: 66.666667%;
+    }.tablet-p-line9{
+        height: 75%;
+    }.tablet-p-line10{
+        height: 83.333333%;
+    }.tablet-p-line11{
+        height: 91.666667%;
+    }.tablet-p-line12{
+        height: 100%;
+    }
+
+    .tablet-p-col{
+        width: auto;
+    }.tablet-p-col0{
+        width: 0.1%;
+    }.tablet-p-col1{
+        width: 8.333333%;
+    }.tablet-p-col2{
+        width: 16.666667%;
+    }.tablet-p-col3{
+        width: 25%;
+    }.tablet-p-col4{
+        width: 33.333333%;
+    }.tablet-p-col5{
+        width: 41.666667%;
+    }.tablet-p-col6{
+        width: 50%;
+    }.tablet-p-col7{
+        width: 58.333333%;
+    }.tablet-p-col8{
+        width: 66.666667%;
+    }.tablet-p-col9{
+        width: 75%;
+    }.tablet-p-col10{
+        width: 83.333333%;
+    }.tablet-p-col11{
+        width: 91.666667%;
+    }.tablet-p-col12{
+        width: 100%;
+    }
+	
+
+	.tablet-p-hide{
+		display: none !important;
+	}
+
+	
+
+    .tablet-p-left{
+        text-align: left;
+
+    }.tablet-p-center{
+        text-align: center;
+    }.tablet-p-center *{
+		text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+    }.tablet-p-right{
+        text-align: right;
+    }
+
+    .tablet-p-top{
+        vertical-align: top;
+    }.tablet-p-middle{
+        vertical-align: middle;
+	}.tablet-p-middle *{
+		/*vertical-align: middle;*/
+		margin-top: auto;
+		margin-bottom: auto;
+
+    }.tablet-p-bottom{
+        vertical-align: bottom;
+    }
+
+/*	.tablet-p-justify{
+        text-align: justify;
+    }*/
+
+}

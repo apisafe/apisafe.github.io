@@ -1,0 +1,74 @@
+<script type="text/javascript">
+	var Controller = new (function(){
+		var self = this;
+		
+		self.construct = function(){
+			setTimeout(function(){
+				document.querySelector('body').classList.add('active');
+			},100);
+		}	
+
+		return self;
+	});
+</script>
+<style type="text/css">
+
+
+
+	raiz-component.{package}{		
+		position: absolute;
+		/*background-color: #eee;*/
+		padding: 10px;
+		z-index: 100;
+		width: 100%;
+	}raiz-component.{package} ul{		
+		display: inline-table;
+		margin: 0px;
+		padding: 0px;
+	}raiz-component.{package} ul li{		
+		list-style: none;
+		display: table-cell;
+	}raiz-component.{package} ul li a{
+		display: block;
+		padding: 10px;
+		/*border-bottom: 2px solid #ccc;		*/
+		margin: 5px;
+		color: #510013;
+		transition: 600ms;
+		text-decoration: none;
+	}raiz-component.{package} ul li a:hover{
+		color: #fff;
+		border-bottom: 1px solid #fff;		
+	}
+
+	raiz-component.{package} .logo img{
+		vertical-align: middle;
+
+	}raiz-component.{package} .logo label{
+		color: #510013;
+		font-weight: bold;
+		font-size: 18px;
+		margin-top: 10px
+	}
+
+
+
+</style>
+<script type="text/html">
+	<div class="container">
+		<div grid class="line tablet-nobreak ">
+			<div grid class="column col6  middle  mobile-center tablet-center">
+				<div class="logo">
+					<label>APISafe</label>
+					<img src="assets/img/icon-48i.png">
+					<label>v1.0</label>
+				</div>
+			</div>
+			<div grid class="column  right mobile-center middle">
+				<ul>
+					<li><a href="https://wallrio.com" target="_blank">wallrio.com</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</script>

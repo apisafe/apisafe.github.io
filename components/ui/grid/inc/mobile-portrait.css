@@ -1,0 +1,101 @@
+/* Responsible: smartPhone = portrait; */
+@media screen and (max-width: 375px) {
+
+
+    .mobile-p-line{
+        height: auto;
+    }.mobile-p-line0{
+        height: 0.1%;
+    }.mobile-p-line1{
+        height: 8.333333%;
+    }.mobile-p-line2{
+        height: 16.666667%;
+    }.mobile-p-line3{
+        height: 25%;
+    }.mobile-p-line4{
+        height: 33.333333%;
+    }.mobile-p-line5{
+        height: 41.666667%;
+    }.mobile-p-line6{
+        height: 50%;
+    }.mobile-p-line7{
+        height: 58.333333%;
+    }.mobile-p-line8{
+        height: 66.666667%;
+    }.mobile-p-line9{
+        height: 75%;
+    }.mobile-p-line10{
+        height: 83.333333%;
+    }.mobile-p-line11{
+        height: 91.666667%;
+    }.mobile-p-line12{
+        height: 100%;
+    }
+
+    .mobile-p-col{
+        width: auto;
+    }.mobile-p-col0{
+        width: 0.1%;
+    }.mobile-p-col1{
+        width: 8.333333%;
+    }.mobile-p-col2{
+        width: 16.666667%;
+    }.mobile-p-col3{
+        width: 25%;
+    }.mobile-p-col4{
+        width: 33.333333%;
+    }.mobile-p-col5{
+        width: 41.666667%;
+    }.mobile-p-col6{
+        width: 50%;
+    }.mobile-p-col7{
+        width: 58.333333%;
+    }.mobile-p-col8{
+        width: 66.666667%;
+    }.mobile-p-col9{
+        width: 75%;
+    }.mobile-p-col10{
+        width: 83.333333%;
+    }.mobile-p-col11{
+        width: 91.666667%;
+    }.mobile-p-col12{
+        width: 100%;
+    }
+    
+	.mobile-p-hide{
+		display: none !important;
+	}
+
+	
+
+    .mobile-p-left{
+        text-align: left;
+
+    }.mobile-p-center{
+        text-align: center;
+    }.mobile-p-center *{
+		text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+  
+    }.mobile-p-right{
+    }
+
+    .mobile-p-top{
+        vertical-align: top;
+    }.mobile-p-middle{
+        vertical-align: middle;
+	}.mobile-p-middle *{
+        /*vertical-align: middle;*/
+        margin-top: auto;
+        margin-bottom: auto;
+
+    }.mobile-p-bottom{
+        vertical-align: bottom;
+    }
+
+	/*.mobile-p-justify{
+        text-align: justify;
+    }*/
+
+}

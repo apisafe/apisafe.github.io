@@ -1,0 +1,293 @@
+html,body{
+    height: 100%;
+    margin: 0px;
+}
+body,body *{
+    box-sizing: border-box;
+}
+
+
+
+[grid].line{
+    position: relative;
+}[grid].line [grid].column{
+    position: relative;
+}
+
+
+
+/*[grid].line.fixed {
+    display: table;
+    width: 100%;
+}[grid].line.fixed [grid].column{
+    display: table-cell;
+}*/
+
+.padding{
+    padding: 10px;
+}.padding-left{
+    padding-left: 10px;
+}.padding-right{
+    padding-right: 10px;
+}.padding-top{
+    padding-top: 10px;
+}.padding-bottom{
+    padding-bottom: 10px;
+}
+
+.width100{
+    width: 100%;
+}
+
+.line{
+    height: auto;
+}.line0{
+    height: 0.1%;
+}.line1{
+    height: 8.333333%;
+}.line2{
+    height: 16.666667%;
+}.line3{
+    height: 25%;
+}.line4{
+    height: 33.333333%;
+}.line5{
+    height: 41.666667%;
+}.line6{
+    height: 50%;
+}.line7{
+    height: 58.333333%;
+}.line8{
+    height: 66.666667%;
+}.line9{
+    height: 75%;
+}.line10{
+    height: 83.333333%;
+}.line11{
+    height: 91.666667%;
+}.line12{
+    height: 100%;
+}
+
+
+.col{
+    width: auto;
+}.col0{
+    width: 0.1%;
+}.col1{
+    width: 8.333333%;
+}.col2{
+    width: 16.666667%;
+}.col3{
+    width: 25%;
+}.col4{
+    width: 33.333333%;
+}.col5{
+    width: 41.666667%;
+}.col6{
+    width: 50%;
+}.col7{
+    width: 58.333333%;
+}.col8{
+    width: 66.666667%;
+}.col9{
+    width: 75%;
+}.col10{
+    width: 83.333333%;
+}.col11{
+    width: 91.666667%;
+}.col12{
+    width: 100%;
+}
+
+
+.coln{
+    width: auto;
+}.coln0{
+    width: 0.1%;
+}.coln1{
+    width: 100%;
+}.coln2{
+    width: 50%;
+}.coln3{
+    width: 33.33%;
+}.coln4{
+    width: 25.00%;
+}.coln5{
+    width: 20.00%;
+}.coln6{
+    width: 16.66%;
+}.coln7{
+    width: 14.28%;
+}.coln8{
+    width: 12.50%;
+}.coln9{
+    width: 11.11%;
+}.coln10{
+    width: 10.00%;
+}.coln11{
+    width: 9.09%;
+}.coln12{
+    width: 8.33%;
+}
+
+.hide{
+    display: none !important;
+}
+
+.fixed{
+    position: fixed;
+    z-index: 1000;
+}
+
+/* scroll */
+
+[grid].scroll-wrapper{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: block !important;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+[grid].scroll-content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+
+.scroll {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}.scroll-fixed {        
+    display: block;    
+    height:100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+     /*position: fixed; */
+}
+
+
+
+/* delimit/container */
+
+
+
+
+
+
+/* wrapper */
+
+[grid].wrapper{
+    display: table;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}[grid].header{
+    height: 0.1px;
+    width: 100%;
+    display: table-row;
+}[grid].main{
+    display: table-row;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}[grid].footer{
+    width: 100%;
+    display: table-row;
+    height: 0.1px;
+}
+
+
+
+/* espacamento */
+
+
+
+
+
+/*.nomargin{
+    padding: 0px !important;
+}
+*/
+
+
+/* alinhamento */
+.left{
+
+    text-align: left;
+    align-items: flex-start;
+
+    flex-direction: row ;
+    justify-content: start ;
+
+}.center{
+
+    text-align: center;
+    /*align-items: center;*/
+    justify-content: center;
+}.center *{
+    margin-left: auto;
+    margin-right: auto;
+}.right{
+
+    text-align: right;
+    align-items: flex-end;
+
+    flex-direction: row ;
+    justify-content: end ;
+}
+
+.top{
+
+    vertical-align: top;
+    flex-direction: column;
+    justify-content: flex-start;
+}.middle{
+
+    vertical-align: middle;
+    flex-direction: column;
+    justify-content: center;
+}.bottom{
+
+    vertical-align: bottom;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+    /*.left{
+        text-align: left;
+    }.center{
+        text-align: center;
+    }.center *{
+        text-align: center;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }.right{
+        text-align: right;
+    }
+
+    .top{
+        vertical-align: top;
+    }.middle{
+        vertical-align: middle;
+    }.middle *{
+        vertical-align: middle;
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }.bottom{
+        vertical-align: bottom;
+    }*/
+
+    

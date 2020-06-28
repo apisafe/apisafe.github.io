@@ -1,0 +1,97 @@
+
+<script type="text/javascript">
+	var Controller = new (function(){
+		var self = this;
+
+
+
+		self.monitor = function(){
+
+			var elements = document.querySelectorAll('.height100p');
+			for (var i = 0; i < elements.length; i++) {
+				el = elements[i];
+				if(el.height100p_init == true) continue;
+				el.height100p_init = true;	
+				var hadjust = el.getBoundingClientRect().top;				
+				el.style['height'] = self._size().browser.height-hadjust+'px';				
+			}
+		
+
+			setTimeout(function(){
+				self.monitor();
+			},2000);
+		}
+
+		self.construct = function(){
+
+			self.monitor();
+
+			self._observer(function(){
+				return self._size().browser.width;
+			},function(value){
+
+					document.querySelector('html').classList.remove('desktop');
+					document.querySelector('html').classList.remove('tablet');
+					document.querySelector('html').classList.remove('tablet-l');
+					document.querySelector('html').classList.remove('tablet-p');
+					document.querySelector('html').classList.remove('mobile');
+					document.querySelector('html').classList.remove('mobile-l');
+					document.querySelector('html').classList.remove('mobile-p');
+
+				
+				if(value >= '1024'){
+					document.querySelector('html').classList.add('desktop');
+
+				}else if(value >= '769' && value <= '1023'){
+					document.querySelector('html').classList.add('tablet');
+					document.querySelector('html').classList.add('tablet-l');
+
+				}else if(value >= '641' && value <= '768'){
+					document.querySelector('html').classList.add('tablet');
+					document.querySelector('html').classList.add('tablet-p');
+
+				}else if(value >= '376' && value <= '640'){
+					document.querySelector('html').classList.add('mobile');
+					document.querySelector('html').classList.add('mobile-l');
+
+				}else if(value <= '375'){
+					document.querySelector('html').classList.add('mobile');
+					document.querySelector('html').classList.add('mobile-p');
+
+
+					
+				}
+			});
+
+		}
+
+		return this;
+	})();	
+</script>
+
+<style type="text/css">
+	
+@import "{package-url}/inc/basic.css";
+
+/* Responsible: smartPhone = landscape and portrait; */
+@import "{package-url}/inc/mobile.css";
+
+/* Responsible: smartPhone = portrait; */
+@import "{package-url}/inc/mobile-portrait.css";
+
+/* Responsible: smartPhone = landscape; */
+@import "{package-url}/inc/mobile-landscape.css";
+
+/* Responsible: tablet = landscape and portrait; */
+@import "{package-url}/inc/tablet.css";
+
+/* Responsible: tablet = portrait; */
+@import "{package-url}/inc/tablet-portrait.css";
+
+/* Responsible: tablet = landscape; */
+@import "{package-url}/inc/tablet-landscape.css";
+
+/* Responsible: desktop = landscape; */
+@import "{package-url}/inc/desktop.css";
+
+</style>

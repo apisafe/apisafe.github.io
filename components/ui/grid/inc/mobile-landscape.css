@@ -1,0 +1,99 @@
+/* Responsible: smartPhone = landscape; */
+@media screen and (min-width: 376px) and (max-width: 640px) {
+
+
+    .mobile-l-line{
+        height: auto;
+    }.mobile-l-line0{
+        height: 0.1%;
+    }.mobile-l-line1{
+        height: 8.333333%;
+    }.mobile-l-line2{
+        height: 16.666667%;
+    }.mobile-l-line3{
+        height: 25%;
+    }.mobile-l-line4{
+        height: 33.333333%;
+    }.mobile-l-line5{
+        height: 41.666667%;
+    }.mobile-l-line6{
+        height: 50%;
+    }.mobile-l-line7{
+        height: 58.333333%;
+    }.mobile-l-line8{
+        height: 66.666667%;
+    }.mobile-l-line9{
+        height: 75%;
+    }.mobile-l-line10{
+        height: 83.333333%;
+    }.mobile-l-line11{
+        height: 91.666667%;
+    }.mobile-l-line12{
+        height: 100%;
+    }
+
+    .mobile-l-col{
+        width: auto;
+    }.mobile-l-col0{
+        width: 0.1%;
+    }.mobile-l-col1{
+        width: 8.333333%;
+    }.mobile-l-col2{
+        width: 16.666667%;
+    }.mobile-l-col3{
+        width: 25%;
+    }.mobile-l-col4{
+        width: 33.333333%;
+    }.mobile-l-col5{
+        width: 41.666667%;
+    }.mobile-l-col6{
+        width: 50%;
+    }.mobile-l-col7{
+        width: 58.333333%;
+    }.mobile-l-col8{
+        width: 66.666667%;
+    }.mobile-l-col9{
+        width: 75%;
+    }.mobile-l-col10{
+        width: 83.333333%;
+    }.mobile-l-col11{
+        width: 91.666667%;
+    }.mobile-l-col12{
+        width: 100%;
+    }
+
+    .mobile-l-hide{
+		display: none !important;
+	}
+
+  
+    .mobile-l-left{
+        text-align: left;
+
+    }.mobile-l-center{
+        text-align: center;
+    }.mobile-l-center *{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+    }.mobile-l-right{
+    }
+
+    .mobile-l-top{
+        vertical-align: top;
+    }.mobile-l-middle{
+        vertical-align: middle;
+    }.mobile-l-middle *{
+        /*vertical-align: middle;*/
+        margin-top: auto;
+        margin-bottom: auto;
+
+    }.mobile-l-bottom{
+        vertical-align: bottom;
+    }
+
+   /* .mobile-l-justify{
+        text-align: justify;
+    }*/
+}

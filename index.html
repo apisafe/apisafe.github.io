@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html raiz-controller="Main">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+	<meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	
+	<link rel="shortcut icon" type="image/png" href="assets/img/icon-32.png"/>
+	<title>APISafe</title>
+	<meta name="description" content="Aplicação para Teste de API, disponivel para windows, linux, mac e web">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170107336-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-170107336-1');
+</script>
+
+
+	<script type="text/javascript" src="vendor/raiz/raiz.js"></script>
+	<script type="text/javascript" src="Main.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	
+	<link raiz-component="components::ui">
+	<link raiz-component="components::ui/grid"  >
+	<link raiz-component="components::ui/input"  >
+	
+	<!-- <link raiz-component="components::basic"  > -->
+
+	<script type="application/json" raiz-settings>
+    	{
+    		"domain":"",
+    		"components":{
+				"cache":false,
+				"repositories":{
+					"cp":"./components"
+				}
+			}
+    	}
+    </script>
+
+	
+
+
+	<style type="text/css">
+		.memoryCol{
+			border-right: 1px solid #ccc;
+			padding: 10px;
+		}
+
+		.cpuCol{
+			border-right: 1px solid #ccc;
+			padding: 10px;
+		}
+	
+		.processCol{
+			padding: 10px;
+		}
+
+	</style>
+
+</head>
+<body style="display: none;">
+
+	<div grid class="wrapper">
+		<div grid class="header ajustBar">
+			
+			<raiz-component name="$cp::header"></raiz-component>
+			
+
+		</div>
+		<div grid class="main ">
+			<div class="container line12">
+				<div class=" line12">
+					
+					<div grid class="line line12 tablet-nobreak">
+						
+						<div grid class="column mobile-line7 middle left padding mobile-center tablet-center">
+							
+							<div class="modelDownload">
+								<label>Download free</label>
+								<a href="downloads/apisafe_1.0.0_64bits.deb" type="button" class="btn-ui -black">Debian/Derivates <small><img src="assets/img/icon-debian.png"></small></a>
+								<a href="downloads/apisafe_1.0.0_64bits.rpm" type="button" class="btn-ui -black">Fedora/Derivates <small><img src="assets/img/icon-fedora.png"></small></a>
+								<!-- <a href="downloads/apisafe_1.0_amd64.exe" type="button" class="btn-ui -black">Windows <small>coming soon</small></a> -->
+								<a href="downloads/apisafe_1.0.0_64bits.exe" type="button" class="btn-ui -black">Windows <small><img src="assets/img/icon-windows.png"></small></a>
+								<label>Online free</label>
+								<a href="web" type="button" class="btn-ui -black">Web Browser <small><img src="assets/img/icon-web.png"></small></a>
+							</div>
+
+						</div>
+						<div grid class="column col6 mobile-line4 center middle padding tablet-center">
+							
+							<div class="modelInfo">
+								<h2>APISafe</h2>
+								<p>Platform for API Tester</p>	
+								<div class="thumb">
+									<img src="assets/img/screenshot.jpg">
+								</div>						
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div grid class="footer">
+			
+		</div>
+	</div>
+
+
+</body>
+</html>

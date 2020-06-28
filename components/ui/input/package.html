@@ -1,0 +1,353 @@
+
+<script type="text/javascript">
+	var Controller = new (function(){
+		var self = this;
+
+		this.construct = function(){
+
+			// setTimeout(function(){
+				self.monitor();
+			// },5000);
+		}
+
+		this.monitor = function(){
+
+			var inputsArray = document.querySelectorAll('.input-ui');
+
+			for (var i = 0; i < inputsArray.length; i++) {
+				var el = inputsArray[i];
+
+				if(el.init == true)continue;
+				el.init = true;
+
+				self.replaceInputs(el);
+				
+			}
+
+			setTimeout(function(){
+				self.monitor();
+			});
+		}
+
+		this.replaceInputs = function(el){
+			
+
+
+			var name = el.name;
+			var value = el.value;
+			var value = el.value;
+			var statusbind = el.getAttribute('statusbind');
+			var placeholder = el.getAttribute('placeholder');
+			var classContent = el.getAttribute('class');
+			classContent = classContent.replace('input-ui','');
+
+			var fieldset = document.createElement("fieldset");
+			fieldset.setAttribute('class',classContent);
+			fieldset.classList.add('input-ui-defined');
+			
+			if(classContent.indexOf('inputflat')=== -1)			
+			fieldset.classList.add('defaultInput');
+
+			var legend = document.createElement("legend");
+			legend.innerHTML = placeholder;
+
+			if(el.tagName === 'INPUT'){			
+				var input = document.createElement("input");
+			}else{
+				var input = document.createElement("textarea");
+				fieldset.classList.add('inputTextarea');
+			}
+
+			for (var i = 0; i < el.attributes.length; i++) {
+				if(el.attributes[i].name !== 'placeholder')
+				input[el.attributes[i].name] = el.attributes[i].value || '';
+
+				if(el.attributes[i].name !== 'class' && el.attributes[i].name !== 'placeholder'){
+					
+					try{
+						input.setAttribute(el.attributes[i].name,el.attributes[i].value);
+					}catch(e){}
+
+
+					
+				}
+			}
+
+
+			
+			input.onfocus = function(){				
+				fieldset.classList.add('focus');
+				input.classList.add('focus');
+				var statusbindEls = document.querySelectorAll(statusbind);
+				for (var i = 0; i < statusbindEls.length; i++) {
+					statusbindEls[i].classList.add('focus');
+				}
+				
+			}
+
+			
+
+			input.onblur = function(){
+				fieldset.classList.remove('focus');
+				input.classList.remove('focus');
+
+				var statusbindEls = document.querySelectorAll(statusbind);
+				for (var i = 0; i < statusbindEls.length; i++) {
+					statusbindEls[i].classList.remove('focus');
+				}
+
+				if(String(this.value).replace(/ /g,'')!==''){
+					fieldset.classList.add('notempty');
+					input.classList.add('notempty');
+
+					var statusbindEls = document.querySelectorAll(statusbind);
+					for (var i = 0; i < statusbindEls.length; i++) {
+						statusbindEls[i].classList.add('notempty');
+					}
+
+				}else{
+					fieldset.classList.remove('notempty');
+					input.classList.remove('notempty');
+
+					var statusbindEls = document.querySelectorAll(statusbind);
+					for (var i = 0; i < statusbindEls.length; i++) {
+						statusbindEls[i].classList.remove('notempty');
+					}
+				}
+			}
+
+			input.onkeyup = function(){
+				// fieldset.classList.remove('focus');
+				if(String(this.value).replace(/ /g,'')!==''){
+					fieldset.classList.add('notempty');
+					input.classList.add('notempty');
+
+					var statusbindEls = document.querySelectorAll(statusbind);
+					for (var i = 0; i < statusbindEls.length; i++) {
+						statusbindEls[i].classList.add('notempty');
+					}
+				}else{
+					fieldset.classList.remove('notempty');
+					input.classList.remove('notempty');
+
+					var statusbindEls = document.querySelectorAll(statusbind);
+					for (var i = 0; i < statusbindEls.length; i++) {
+						statusbindEls[i].classList.remove('notempty');
+					}
+				}
+			}
+
+			self._observer(function(){
+				if(input.getAttribute('placeholder-error') !== null){
+				
+					if(input.placeholderInput === undefined)
+					input.placeholderInput = legend.innerHTML;
+
+					legend.innerHTML = input.getAttribute('placeholder-error');
+					fieldset.classList.add('placeholder-error');
+				}else{
+					if(input.placeholderInput !== undefined)
+					legend.innerHTML = input.placeholderInput;
+					
+					fieldset.classList.remove('placeholder-error');
+
+				}
+
+				return input.value;
+			},function(valueInput){
+				if(document.activeElement === input) return;
+
+				fieldset.classList.remove('focus');
+				input.classList.remove('focus');
+
+				var statusbindEls = document.querySelectorAll(statusbind);
+				for (var i = 0; i < statusbindEls.length; i++) {
+					statusbindEls[i].classList.remove('focus');
+				}
+
+				if(String(valueInput).replace(/ /g,'')!==''){
+					fieldset.classList.add('notempty');
+					input.classList.add('notempty');
+
+					var statusbindEls = document.querySelectorAll(statusbind);
+					for (var i = 0; i < statusbindEls.length; i++) {
+						statusbindEls[i].classList.add('notempty');
+					}
+				}else{
+					fieldset.classList.remove('notempty');
+					input.classList.remove('notempty');
+
+					var statusbindEls = document.querySelectorAll(statusbind);
+					for (var i = 0; i < statusbindEls.length; i++) {
+						statusbindEls[i].classList.remove('notempty');
+					}
+
+				}
+			});
+
+
+
+
+			
+			if(String(input.value).replace(/ /g,'')!==''){
+				fieldset.classList.add('notempty');
+				input.classList.add('notempty');
+
+				var statusbindEls = document.querySelectorAll(statusbind);
+				for (var i = 0; i < statusbindEls.length; i++) {
+					statusbindEls[i].classList.add('notempty');
+				}
+
+			}else{
+				fieldset.classList.remove('notempty');
+				input.classList.remove('notempty');
+
+				var statusbindEls = document.querySelectorAll(statusbind);
+				for (var i = 0; i < statusbindEls.length; i++) {
+					statusbindEls[i].classList.remove('notempty');
+				}
+
+			}
+
+			fieldset.appendChild(legend);
+			fieldset.appendChild(input);
+
+			setTimeout(function(el,fieldset){
+				if(el.parentNode){
+					
+					el.parentNode.insertBefore(fieldset, el.nextSibling);	
+					el.parentNode.removeChild(el);
+				}
+				// el.replaceWith(fieldset);
+			},100,el,fieldset);
+		}
+
+
+		return this;
+	})();
+
+</script>
+<style type="text/css">
+	
+	.input-ui{
+		opacity: 0;
+	}
+	.input-ui-defined{
+		opacity: 1;
+
+	}
+
+	fieldset.defaultInput.input-ui-defined{
+		position: relative;
+		margin: 16px 0px 5px 0px;
+		padding: 0px;
+		display: inline-block;
+		border: 0px;
+    	border: 1px solid #aaaaaa7a;
+    	transition: 300ms;
+    	width: 100%;
+	}fieldset.defaultInput.input-ui-defined.focus{ 
+    	border: 1px solid #0088DC;
+	}fieldset.defaultInput.input-ui-defined legend{ 
+		padding: 0px 5px;
+	    margin: 0px 10px;
+	    color: #888;
+	    position: absolute;
+	    top: 50%;
+	    left: 0px;
+	    transform: translateY(-50%);
+	    background-color: transparent;
+	    transition: 300ms;
+	    pointer-events: none;
+	    font-weight: normal;
+
+	}fieldset.defaultInput.input-ui-defined.inputTextarea legend{
+		top: 18px;
+	}fieldset.defaultInput.input-ui-defined.focus legend,
+	fieldset.defaultInput.input-ui-defined.notempty legend{ 
+	    top: 0%;		
+	    color: #0088DC;
+	}fieldset.defaultInput.input-ui-defined input,
+	fieldset.defaultInput.input-ui-defined textarea{
+		display: block;
+		border:0px; 
+		margin: 0px;
+		outline: 0 !important;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+	
+
+	}fieldset.defaultInput.input-ui-defined input:focus,
+	fieldset.defaultInput.input-ui-defined textarea:focus{
+		border:0px ; 
+		outline: 0 !important;
+	}
+
+	/* inputflat -------------------------------  */
+
+	fieldset.inputflat.input-ui-defined{
+		position: relative;
+		margin: 16px 0px 5px 0px;
+    	padding: 10px 0px 0px 0px;
+		display: inline-block;
+		border: 0px;
+    	border-bottom: 2px solid #aaaaaa7a;
+    	transition: 300ms;
+    	width: 100%;
+	}fieldset.inputflat.input-ui-defined.focus{   
+	}fieldset.inputflat.input-ui-defined::before{    
+		position: absolute; 	
+		content: ' ';
+		width: 100%;
+		height: 5px;
+		height: 2px;
+		left: 0px;
+    	bottom: -2px;
+    	transition: 300ms;
+    	transform: scale(0);
+	}fieldset.inputflat.input-ui-defined.focus::before{    
+    	transform: scale(1);
+		background-color: #0088DC;
+	}fieldset.inputflat.input-ui-defined legend{ 
+		padding: 0px 5px;
+	    margin: 0px 0px;
+	    color: #888;
+	    position: absolute;
+	    top: 50%;
+	    left: 0px;
+	    transform: translateY(-50%);
+	    background-color: transparent;
+	    transition: 300ms;
+	    pointer-events: none;
+	    font-weight: normal;
+	}fieldset.inputflat.input-ui-defined.placeholder-error legend{ 
+		color: red !important;
+	}fieldset.inputflat.input-ui-defined.focus legend,
+	fieldset.inputflat.input-ui-defined.notempty legend{ 
+	    top: 0%;		
+	    color: #0088DC;
+	}fieldset.inputflat.input-ui-defined input,
+	fieldset.inputflat.input-ui-defined textarea{
+		display: block;
+		border:0px; 
+		margin: 0px;
+		outline: 0 !important;
+		width: 100%;
+		height: 100%;
+		padding: 10px 10px 5px;
+		font-size: 15px;
+    	font-family: arial;
+    	color: #444;
+    	background-color: transparent;
+	}fieldset.inputflat.input-ui-defined input:focus,
+	fieldset.inputflat.input-ui-defined textarea:focus{
+		/*border:0px ; */
+		outline: 0 !important;
+	}fieldset.inputflat.input-ui-defined input[readonly],
+	fieldset.inputflat.input-ui-defined textarea[readonly]{
+		color: #aaa !important;
+	}
+
+
+</style>
