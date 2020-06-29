@@ -8,6 +8,23 @@ var Main = (function(){
 
 	}
 
+	self['[show-example]'] = function(){
+
+		return {
+			click:function(){
+				self._selector('.fullscreen')[0].classList.remove('hide');
+			}
+		}
+	}
+
+	self['[hide-example]'] = function(){
+
+		return {
+			click:function(){
+				self._selector('.fullscreen')[0].classList.add('hide');
+			}
+		}
+	}
 
 	return this;
 })();
