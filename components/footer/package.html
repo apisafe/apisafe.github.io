@@ -30,7 +30,7 @@
 						message += '<strong>Email: </strong>'+email+'<br>';
 						message += '<strong>Mensagem: </strong>'+msg+'<br>';
 
-					var url = 'https://admin.achoord.com/api/v1/wallrio/apisafe/emails/feedback/send?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndhbGxyaW9AZ21haWwuY29tIn0.rRih7Ci-vqwDY8HnRHr4eb5RKRaFTNt8QPLcyKjnFTo';
+					var url = 'https://admin.achoord.com/api/v1/wallrio/apisafe/emails/feedback/send?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndhbGxyaW9AZ21haWwuY29tIiwibGFzdG1vZGlmaWVkIjoxNjAxODA1NDEwfQ.HvtfON7pW3IxSh8yxEEpqc1l4ZhFtDQXXP4yLXyP8GM';
 
 					self._ajax({
 						url:url,
@@ -98,20 +98,20 @@
 <script type="text/html">
 	<div class="container padding mobile-center tablet-center">
 		<div class="feedback-sended hide">
-			<p>Obrigado pelo envio do seu feedback!</p>
+			<p>Thank you for sending your feedback!</p>
 		</div>
 		<div class="feedback-form">
-			<button class="-itransparent" feedback>Envie seu Feedback</button>
+			<button class="-itransparent" feedback>Send your Feedback</button>
 			<div class="formArea">
 				<form name="formFeedback" class="padding">
-					<input type="text" name="name" class="inputflat input-ui" placeholder="Nome">
+					<input type="text" name="name" class="inputflat input-ui" placeholder="Name">
 					<input type="text" name="email" class="inputflat input-ui" placeholder="Email">
 					<br>
-					<textarea name="message" class="inputflat input-ui" placeholder="Mensagem"></textarea>
+					<textarea name="message" class="inputflat input-ui" placeholder="Message"></textarea>
 					<br>
 					<div grid class="line ">
 						<div grid class="column col1 ">
-							<button class="-black">Enviar</button>
+							<button class="-black">Send</button>
 						</div>
 						<div grid class="column">
 							<div class="padding" id="resultFormFeedback">
